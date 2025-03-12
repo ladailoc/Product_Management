@@ -1,0 +1,37 @@
+﻿@page
+@using ProductManagement.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    var product1 = new Product { Name = "Product 1", Description = "Description 1", Price = 100 };
+
+    var product2 = new Product { Name = "Product 2", Description = "Description 2", Price = 200 };
+
+    var product3 = new Product { Name = "Product 3", Description = "Description 3", Price = 300 };
+}
+
+<div class="row">
+    <div class="col">
+        <partial name="_ProductItem" model="product1"/>
+    </div>
+    <div class="col">
+        @await Html.PartialAsync("_ProductItem", product2)
+    </div>
+    <div class="col">
+        @{
+            await Html.RenderPartialAsync("_ProductItem", product3);
+        }
+    </div>
+</div>
+
+
+
+
