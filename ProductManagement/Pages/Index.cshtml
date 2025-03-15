@@ -2,13 +2,9 @@
 @using ProductManagement.Models
 @model IndexModel
 @{
+    Layout = "_NewLayout";
     ViewData["Title"] = "Home page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
 
 @{
     var product1 = new Product { Name = "Product 1", Description = "Description 1", Price = 100 };
@@ -18,6 +14,8 @@
     var product3 = new Product { Name = "Product 3", Description = "Description 3", Price = 300 };
 }
 
+@await Html.PartialAsync("_Message")
+@await Component.InvokeAsync("ProductBox", false)
 <div class="row">
     <div class="col">
         <partial name="_ProductItem" model="product1"/>

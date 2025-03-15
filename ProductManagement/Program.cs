@@ -1,3 +1,5 @@
+using ProductManagement.Services;
+
 namespace ProductManagement
 {
     public class Program
@@ -8,6 +10,7 @@ namespace ProductManagement
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            builder.Services.AddSingleton<ProductService>();
 
             var app = builder.Build();
 
