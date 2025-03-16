@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #f8f9fa;
+/*    font-family: 'Arial', sans-serif;*/
 }
 
 main {
@@ -32,4 +34,150 @@ main {
 
 p {
     margin-bottom: 0px;
+}
+
+/* ========================= */
+/* 🌟 TÙY CHỈNH GIAO DIỆN 🌟 */
+/* ========================= */
+
+
+/* 🏷️ Tiêu đề */
+/*h1 {
+    text-align: center;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+*/
+/* 🔍 Form tìm kiếm */
+form .form-control {
+    border-radius: 8px;
+    border: 2px solid #007bff;
+    padding: 8px;
+}
+
+form .btn-primary {
+    border-radius: 8px;
+    background-color: #007bff;
+    border: none;
+    padding: 8px 15px;
+}
+
+form .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* ==================== */
+/* 🎨 THẺ SẢN PHẨM 🎨 */
+/* ==================== */
+
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card-footer {
+    background-color: #fff;
+    border-top: none;
+}
+
+/* ==================== */
+/* 🔘 NÚT BẤM 🔘 */
+/* ==================== */
+
+.btn {
+    border-radius: 8px;
+    padding: 6px 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+/* =========================== */
+/* 📦 MODAL CẬP NHẬT SẢN PHẨM */
+/* =========================== */
+
+.modal-content {
+    border-radius: 12px;
+    border: none;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.modal-header .btn-close {
+    color: white;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body label {
+    font-weight: bold;
+}
+
+.modal-body input {
+    border-radius: 8px;
+    border: 2px solid #007bff;
+    padding: 8px;
+    width: 100%;
+}
+
+.modal-body .btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+}
+
+.modal-body .btn-primary:hover {
+    background-color: #0056b3;
 }
