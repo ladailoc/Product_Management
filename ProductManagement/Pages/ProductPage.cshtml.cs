@@ -12,6 +12,8 @@ namespace ProductManagement.Pages
         public Product product;
         [BindProperty]
         public string searchName { get; set; } = string.Empty;
+        [BindProperty]
+        public Product NewProduct { get; set; }
         ProductService _productService;
         public ProductPageModel(ProductService productService)
         {
@@ -63,6 +65,15 @@ namespace ProductManagement.Pages
             {
                 products = _productService.GetProducts();
             }
+        }
+        public IActionResult OnPostAdd()
+        {
+            if (NewProduct != null)
+            {
+                NewProduct.Id = products.Count > 0 ? products.Max(p => p.Id) + 1 : 1;
+                _productService.AddProduct(NewProduct);
+            }
+            return RedirectToPage();
         }
         public IActionResult OnPostUpdate(int id, string name, string description, decimal price)
         {

@@ -76,4 +76,23 @@ else
     <hr>
     <a class="btn btn-danger" asp-page="ProductPage" asp-page-handler="RemoveAll">❌ Xóa tất cả</a>
     <a class="btn btn-success" asp-page="ProductPage" asp-page-handler="LoadAll">🔄 Nạp sản phẩm</a>
+	<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdd">🆕 Thêm sản phẩm mới</button>
 }
+<!-- ➕ Form thêm sản phẩm mới -->
+<div class="modal fade" id="modalAdd">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">🆕 Thêm sản phẩm mới</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form method="post">
+					<input type="text" asp-for="NewProduct.Name" placeholder="Tên sản phẩm" required />
+					<input type="number" asp-for="NewProduct.Price" placeholder="Giá" required />
+                    <button type="submit" class="btn btn-primary mt-3" asp-page-handler="Add">➕ Thêm</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
